@@ -3,4 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+}
+
+.site-title {
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }

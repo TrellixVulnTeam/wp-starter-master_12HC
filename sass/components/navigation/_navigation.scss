@@ -2,7 +2,8 @@
   display: flex;
 
   ul {
-    display: none;
+    display: flex;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding-left: 0;

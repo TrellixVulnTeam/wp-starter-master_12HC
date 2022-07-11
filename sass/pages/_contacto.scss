@@ -1,0 +1,114 @@
+.container-contacto {
+  padding-top: 6rem;
+  //portrait phones, less than 576px
+  @media screen and (max-width: 575.98px) {
+    padding-top: 4rem;
+  }
+  &__contenido {
+    display: flex;
+    width: 100%;
+    //tablets, less than 992px
+    @media (max-width: 991.98px) {
+      flex-direction: column;
+    }
+    //landscape phones, less than 768px
+    @media (max-width: 767.98px) {
+      flex-direction: column;
+    }
+
+    .contacto {
+      &__col1 {
+        flex: 1;
+        line-height: 1.1rem;
+        margin-bottom: $space-2;
+        //portrait phones, less than 576px
+        @media screen and (max-width: 575.98px) {
+          padding-left: 1rem;
+        }
+      }
+      &__datos {
+        margin-top: $space-3;
+        font-family: $font-family-primary;
+
+        //tablets, less than 992px
+        @media (max-width: 991.98px) {
+          margin-top: 0;
+        }
+        //portrait phones, less than 576px
+        @media screen and (max-width: 575.98px) {
+          margin-top: 0;
+        }
+      }
+      &__titulo {
+        margin-bottom: $space-1;
+      }
+      &__direccion {
+        color: $color-grey-3;
+        margin-bottom: 2rem;
+      }
+      &__telefonos {
+        &-item {
+          margin-bottom: 1.1rem;
+          a {
+            text-decoration: none;
+            color: $color-primary-dark;
+          }
+        }
+
+        &-whats {
+          text-align: left;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+      &__col2 {
+        flex: 2;
+      }
+    }
+    .formulario {
+      &__titulo {
+        font-family: $font-family-secondary;
+        margin-bottom: $space-1;
+        //portrait phones, less than 576px
+        @media screen and (max-width: 575.98px) {
+          h1 {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wpcf7 {
+  &-form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.wpcf7-form-control-wrap {
+  width: 100%;
+}
+
+.label {
+  width: 100%;
+}
+
+.wpcf7-list-item-label {
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+}
+
+/* Oculta el icono de reCAPTCHA v3 en todas partes */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+/* Pero muestra el icono de reCAPTCHA v3 en mi página de contacto */
+/* Ojo: cambia el número del id al de la tuya */
+.page-id-15 .grecaptcha-badge {
+  visibility: visible !important;
+}

@@ -2,20 +2,94 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+  border: 1px solid;
+  border-color: $color__border-button;
+  border-radius: 50px;
+  background: $color__background-button;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
 
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
+  &:hover {
+    border-color: $color__border-button-hover;
+  }
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
+  &:active,
+  &:focus {
+    border-color: $color__border-button-focus;
+  }
+}
+
+//Botones Pruñonosa Studio
+@mixin button {
+  padding: 0.8rem 1.475rem; // cambiar tamaño
+  font-size: 1rem;
+  border-radius: 50px; // cambiar radius
+  font-weight: $font-weight-medium;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  transition: $trans;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-width: 2px;
+  border-style: solid;
+  &--lg {
+    padding: 1.125rem 1.9375rem;
+    @media screen and (max-width: 767px) {
+      padding: 1rem 1.475rem;
+    }
+  }
+  &--sm {
+    padding: 0.525rem 1.25em;
+    font-size: $font-size-small;
+  }
+}
+
+.boton {
+  @include button;
+}
+
+$buttons: (
+  // nom, color fondo, color texto, color texto-outline
+  "primary" $color-primary $color-white $color-grey-2,
+  "secondary" $color-secondary $color-white $color-grey-2,
+  "accent" $color-accent $color-white $color-accent,
+  "white" $color-white $color-primary $color-grey-2,
+  "dark" $color-grey-2 $color-white $color-grey-3,
+  "whatsapp" $color-whatsapp-dark $color-white $color-grey-2
+);
+
+@each $name, $c-background, $c-text, $c-text-outline in $buttons {
+  .boton--#{$name} {
+    background: $c-background;
+    color: $c-text;
+    border-color: $c-background;
+    transition: $trans;
+    &:hover {
+      background: darken($c-background, 5%);
+      border-color: darken($c-background, 5%);
+      color: $c-text;
+      box-shadow: $box-shadow-small;
+      transform: translateY(-2px);
+      transition: $trans;
+    }
+  }
+
+  .boton--#{$name}-outline {
+    //background: $c-background;
+    color: $c-background;
+    border-color: $c-background;
+    transition: $trans;
+    &:hover {
+      background: darken($c-background, 5%);
+      border-color: darken($c-background, 5%);
+      color: $c-text;
+      box-shadow: $box-shadow-small;
+      transform: translateY(-2px);
+      transition: $trans;
+    }
+  }
 }

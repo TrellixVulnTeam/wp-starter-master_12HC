@@ -15,9 +15,11 @@
  */
 
 get_header();
+
+get_template_part('template-parts/page-title'); 
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main container">
 
    <?php
 		if ( have_posts() ) :
